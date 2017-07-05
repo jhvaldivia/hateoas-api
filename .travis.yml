@@ -1,2 +1,16 @@
 language: java
-jdk: oraclejdk8
+sudo: false
+install: true
+addons:
+  sonarcloud:
+    organization: jhvaldivia-github
+    token:
+      secure: 570d6c2edffbd179434347ee2785c4f0f595ca9b
+jdk:
+  - oraclejdk8
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
