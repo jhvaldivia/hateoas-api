@@ -3,7 +3,7 @@ sudo: false
 install: true
 addons:
   sonarcloud:
-    organization: jhvaldivia-github
+    organization: '$SONAR_CLOUD_ORG'
     token:
       secure: '$SONAR_CLOUD_TOKEN'
 jdk:
